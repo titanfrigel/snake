@@ -31,14 +31,12 @@ static int iterate_map(vector<string>& map, vector<size_t>& map_size, vector<vec
     if (map[snake_pos[0][1]][snake_pos[0][0]] == 'X') {
         *snake_size += 1;
         map[snake_pos[0][1]][snake_pos[0][0]] = 'O';
-        for (size_t i = 1; i < *snake_size; i++)
-            map[snake_pos[i][1]][snake_pos[i][0]] = 'o';
+        map[snake_pos[1][1]][snake_pos[1][0]] = 'o';
         place_x(map, map_size);
         return (0);
     }
     map[snake_pos[0][1]][snake_pos[0][0]] = 'O';
-    for (size_t i = 1; i < *snake_size; i++)
-        map[snake_pos[i][1]][snake_pos[i][0]] = 'o';
+    map[snake_pos[1][1]][snake_pos[1][0]] = 'o';
     map[snake_pos[*snake_size][1]][snake_pos[*snake_size][0]] = ' ';
     snake_pos.pop_back();
     return (0);
