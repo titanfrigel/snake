@@ -74,7 +74,7 @@ int the_switch_case(int ch, vector<string>& map, vector<size_t>& map_size, vecto
                 return (1);
             if (last_ch == KEY_LEFT)
                 return (the_switch_case(last_ch, map, map_size, snake_pos, snake_size));
-            rvalue = iterate_map(map, map_size, snake_pos, snake_size, [](vector<vector<size_t>>& snake_pos) { snake_pos[0][0] += 1; printw("aa\n");});
+            rvalue = iterate_map(map, map_size, snake_pos, snake_size, [](vector<vector<size_t>>& snake_pos) { snake_pos[0][0] += 1; });
             break;
         default:
             return (the_switch_case(last_ch, map, map_size, snake_pos, snake_size));
